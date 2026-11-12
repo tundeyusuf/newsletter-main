@@ -1,0 +1,177 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Newsletter sign-up form with success message</title>
+  </head>
+
+  <body
+    class="bg-[#36384d] min-h-screen flex items-center justify-center font-sans text-[#242742] px-5 max-[600px]:bg-white max-[600px]:px-0"
+  >
+
+    <main class="w-full flex items-center justify-center">
+
+      <!-- Sign-up section -->
+
+      <section
+        id="signup"
+        class="w-full max-w-[928px] bg-white rounded-[35px] p-6 flex items-center gap-10 max-[600px]:flex-col-reverse max-[600px]:gap-8 max-[600px]:p-0 max-[600px]:rounded-none"
+      >
+
+        <!-- Text content -->
+
+        <div class="flex flex-col flex-1 p-6 pl-10 max-[600px]:w-full max-[600px]:px-6 max-[600px]:pb-10">
+
+          <h1 class="text-[52px] font-bold pb-[15px] max-[600px]:text-[40px]">
+            Stay updated!
+          </h1>
+
+          <p class="pb-[15px] leading-relaxed">
+            Join 60,000+ product managers receiving monthly
+            updates on:
+          </p>
+
+          <!-- Benefits -->
+
+          <div class="py-[10px]">
+
+            <div class="flex items-center py-[10px]">
+              <img src="./assets/images/icon-list.svg" alt="" />
+              <p class="px-[10px]">
+                Product discovery and building what matters
+              </p>
+            </div>
+
+            <div class="flex items-center py-[10px]">
+              <img src="./assets/images/icon-list.svg" alt="" />
+              <p class="px-[10px]">
+                Measuring to ensure updates are a success
+              </p>
+            </div>
+
+            <div class="flex items-center py-[10px]">
+              <img src="./assets/images/icon-list.svg" alt="" />
+              <p class="px-[10px]">
+                And much more!
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Signup form -->
+
+          <form id="signup-form" novalidate class="flex flex-col">
+
+            <div class="flex flex-col">
+
+              <div class="flex justify-between items-center">
+
+                <label
+                  for="email"
+                  class="font-bold text-xs py-[20px]"
+                >
+                  Email address
+                </label>
+
+                <span
+                  id="error-message"
+                  class="hidden text-[#ff6257] text-xs font-bold"
+                  role="alert"
+                >
+                  Valid email required
+                </span>
+
+              </div>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="email@company.com"
+                required
+                aria-invalid="false"
+                class="border border-gray-300 py-[20px] rounded-[10px] px-6 outline-none focus:border-[#242742] aria-[invalid=true]:border-[#ff6257] aria-[invalid=true]:bg-[#ffe8e6] aria-[invalid=true]:text-[#ff6257]"
+              />
+
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-[#242742] text-white font-bold my-5 rounded-[5px] px-6 py-[15px] cursor-pointer hover:bg-gradient-to-r hover:from-[#ff5478] hover:to-[#ff6257] hover:shadow-lg"
+            >
+              Subscribe to monthly newsletter
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- Illustration -->
+
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="./assets/images/illustration-sign-up-mobile.svg"
+          />
+
+          <img
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="Newsletter analytics illustration"
+            class="w-[400px] max-[600px]:w-full"
+          />
+        </picture>
+
+      </section>
+
+
+      <!-- Success message -->
+
+      <section
+        id="success"
+        class="hidden w-full max-w-[504px] bg-white p-16 rounded-[30px] max-[600px]:min-h-screen max-[600px]:rounded-none max-[600px]:p-6 max-[600px]:pt-36"
+      >
+
+        <img
+          src="./assets/images/icon-success.svg"
+          alt=""
+          class="w-16 mb-10"
+        />
+
+        <h1 class="text-[52px] font-bold leading-[1.1] pb-6 max-[600px]:text-[45px]">
+          Thanks for subscribing!
+        </h1>
+
+        <p class="leading-relaxed pb-10">
+          A confirmation email has been sent to
+          <strong id="submitted-email"></strong>.
+          Please open it and click the button inside to confirm
+          your subscription.
+        </p>
+
+        <button
+          type="button"
+          id="dismiss"
+          class="w-full bg-[#242742] text-white font-bold py-5 rounded-[5px] cursor-pointer hover:bg-gradient-to-r hover:from-[#ff5478] hover:to-[#ff6257] hover:shadow-lg max-[600px]:mt-20"
+        >
+          Dismiss message
+        </button>
+
+      </section>
+
+    </main>
+
+    <script src="./main.js"></script>
+
+  </body>
+</html>
